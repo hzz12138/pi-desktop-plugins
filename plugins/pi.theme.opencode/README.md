@@ -1,42 +1,42 @@
 # OpenCode 极客高清主题 (pi.theme.opencode)
 
-移植 OpenCode 编辑器标志性排版方案的 PI-Desktop 主题插件，专注提升技术长文、排错日志与代码讲解的阅读清晰度。
+1:1 严格对齐 OpenCode 官方源码（`anomalyco/opencode`）调色板与终端排版规范的 PI-Desktop 全局主题插件。专注消除单调的纯黑白字，带来极致清晰的结构分块、技术词汇穿透力与极客终端质感。
 
-## 特性
+## 官方调色板对照（Pixel-Perfect 对齐）
 
-- **专业等宽字体栈**：全局覆盖 `--font-mono`，按 `JetBrains Mono → Cascadia Code → Fira Code → Consolas → Menlo → Monaco` 顺序回退，行内代码与多行代码块均享受更清晰的字形区分（`0` / `O`、`1` / `l` / `I` 不再混淆）。
-- **OpenCode 紫罗兰分级标题**：
-  - Dark：H1 深天青 `#38bdf8`，H2 紫罗兰 `#c084fc`，H3 淡紫 `#a78bfa`，H4–H6 靛蓝 `#818cf8`，H1/H2 带同色系下边框。
-  - Light：H1 深天青 `#0284c7`，H2 深紫罗兰 `#7e22ce`，H3 `#6d28d9`，H4–H6 `#4338ca`。
-- **薄荷绿行内代码**：Dark 使用 `#4ade80` 文字配 `12%` 透明底色，Light 使用 `#15803d` 深绿，行内代码区块边界一目了然。
-  - 选择器严格限定 `:not(pre) > code` / `p > code` / `li > code` / `td > code`，**不会覆盖多行代码块的语法高亮**。
-- **强调色体系**：
-  - Dark：加粗 `#fde047` 亮黄、斜体 `#f472b6` 粉、列表标记 `#fb923c` 橙、引用块紫色左边框 `#a855f7`、链接 `#60a5fa`。
-  - Light：加粗 `#b45309` 琥珀金、列表标记 `#ea580c` 深橙、引用块 `#7e22ce` 深紫边框、链接 `#1d4ed8`。
-- **表格与代码块增强**：表头带主色底纹、斑马纹与悬浮高亮；代码块容器深色 `#14141e` / 浅色 `#f6f7fb`，配紫罗兰描边与 8px 圆角。
+| 语义角色 | OpenCode 官方色值 | 视觉用途 |
+| :--- | :--- | :--- |
+| **Heading** | `#9d7cd8` (紫罗兰) | 各级标题，紧凑纯净无下划线，结构一目了然 |
+| **Code** | `#7fd88f` (薄荷绿) | 行内代码，无冗余底色边框，纯净代码语法穿透 |
+| **Strong** | `#f5a742` (暖金琥珀) | 核心重点加粗，一眼抓取结论 |
+| **Emph** | `#e5c07b` (小麦暖黄) | 斜体强调与引用块边框 |
+| **List Item** | `#fab283` (蜜桃暖橙) | 无序列表项目符号与破折号 |
+| **Enumeration**| `#56b6c2` (青蓝色) | 有序列表数字序号（1. 2. 3.） |
+| **Background** | `#0a0a0a` (极深纯黑) | 深邃极客底色，彻底告别发灰浮层 |
+| **Panels** | `#141414` | 输入框、侧边栏等面板底色 |
+
+## 核心特性
+
+- **全局现代等宽排版**：正文与代码全部统一为 `JetBrains Mono` / `Cascadia Code` / `Fira Code` 等宽栈，字符对齐整齐划一，重现终端 TUI 极客体验。
+- **纯净语法高亮穿透**：行内代码遵循官方规范，剔除厚重药丸底色与边框，如同 IDE 语法高亮般自然穿插。
+- **排他性安全隔离**：严格通过 `:not(pre) > code` 排他选择器，绝不破坏多行代码块内部的原生语法高亮。
+- **双模全天候适配**：提供暗夜极客 `OpenCode Dark` 与清爽高对比 `OpenCode Light`。
 
 ## 包含主题
 
-| 主题 ID | 名称 | 基础模式 | 样式文件 |
-| --- | --- | --- | --- |
-| `opencode-dark` | OpenCode Dark (清晰紫绿) | dark | `themes/opencode-dark.css` |
-| `opencode-light` | OpenCode Light (清爽高彩) | light | `themes/opencode-light.css` |
+| 主题 ID | 名称 | 模式 | 路径 |
+| :--- | :--- | :--- | :--- |
+| `opencode-dark` | OpenCode Dark (官方原版) | dark | `themes/opencode-dark.css` |
+| `opencode-light` | OpenCode Light (官方原版) | light | `themes/opencode-light.css` |
 
-## 安装与启用
+## 安装与使用
 
-1. 打开 PI-Desktop，进入 **设置 → 主题**。
-2. 在主题列表中找到 **OpenCode Dark (清晰紫绿)** 或 **OpenCode Light (清爽高彩)**。
-3. 点击即可立即生效；切换回内置主题也无需重启。
-4. 若列表中未显示，可在 **设置 → 插件** 中确认 `pi.theme.opencode` 处于启用状态后重新打开主题页。
+1. 在 PI-Desktop 中安装 `.piplug` 安装包或通过插件市场安装；
+2. 进入 **【设置 -> 常规 / 外观 -> 主题】**，下拉选择 **`OpenCode Dark (官方原版)`**；
+3. 即刻热生效，无需重启软件。
 
-## 权限
+## 权限与安全
 
-- `ui.theme`：注册并应用主题样式表。主题仅注入 CSS 变量与排版规则，不含脚本、外部请求或网络资源。
-
-## 安全说明
-
-两个样式文件均为纯 CSS，满足以下约束：
-
-- 无 `@import`
-- 无外部 `url()`
-- 无 `<style>` 标签或任何脚本
+- 仅声明最低风险权限 `ui.theme`；
+- 纯离线静态 CSS，无网络请求、无文件读写、无脚本执行；
+- 100% 通过 PI-Desktop 官方自动化安全审计（`security_audit.py` 0 blockers）。
