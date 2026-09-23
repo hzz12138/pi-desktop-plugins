@@ -1,0 +1,161 @@
+/* ==========================================================================
+   OpenCode Official Dark Theme for PI-Desktop
+   Source: github.com/anomalyco/opencode (packages/ui/src/theme/themes/opencode.json)
+   Palette:
+     neutral:      #0a0a0a
+     text:         #eeeeee
+     heading:      #9d7cd8 (OpenCode Violet)
+     code:         #7fd88f (OpenCode Mint Green)
+     strong:       #f5a742 (OpenCode Amber Gold)
+     emph:         #e5c07b (OpenCode Wheat Yellow)
+     link:         #fab283 (OpenCode Peach Orange)
+     link-text:    #56b6c2 (OpenCode Cyan Blue)
+     list-item:    #fab283 (OpenCode Peach)
+     enumeration:  #56b6c2 (OpenCode Cyan)
+     rule:         #808080 (OpenCode Weak Gray)
+   ========================================================================== */
+
+:root[data-plugin-theme="plugin:pi.theme.opencode:opencode-dark"] {
+  --font-mono: "JetBrains Mono", "Cascadia Code", "Fira Code", "Consolas", Menlo, Monaco, monospace !important;
+  --ds-accent: #9d7cd8 !important;
+  --ds-accent-soft: #b89ce8 !important;
+}
+
+/* 全局 Markdown 对话排版与正文色彩 */
+:root[data-plugin-theme="plugin:pi.theme.opencode:opencode-dark"] .prose-chat {
+  color: #eeeeee !important;
+  letter-spacing: 0.01em;
+}
+
+/* OpenCode 官方标题色彩体系 (markdown-heading: #9d7cd8) */
+:root[data-plugin-theme="plugin:pi.theme.opencode:opencode-dark"] .prose-chat h1 {
+  color: #9d7cd8 !important;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-top: 1.5em;
+  margin-bottom: 0.6em;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid rgba(157, 124, 216, 0.28);
+}
+
+:root[data-plugin-theme="plugin:pi.theme.opencode:opencode-dark"] .prose-chat h2 {
+  color: #9d7cd8 !important;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  margin-top: 1.4em;
+  margin-bottom: 0.5em;
+  padding-bottom: 0.25em;
+  border-bottom: 1px solid rgba(157, 124, 216, 0.2);
+}
+
+:root[data-plugin-theme="plugin:pi.theme.opencode:opencode-dark"] .prose-chat h3 {
+  color: #b89ce8 !important;
+  font-weight: 600;
+  margin-top: 1.2em;
+  margin-bottom: 0.4em;
+}
+
+:root[data-plugin-theme="plugin:pi.theme.opencode:opencode-dark"] .prose-chat h4,
+:root[data-plugin-theme="plugin:pi.theme.opencode:opencode-dark"] .prose-chat h5,
+:root[data-plugin-theme="plugin:pi.theme.opencode:opencode-dark"] .prose-chat h6 {
+  color: #b89ce8 !important;
+  font-weight: 600;
+}
+
+/* OpenCode 官方行内代码高亮 (markdown-code: #7fd88f) */
+:root[data-plugin-theme="plugin:pi.theme.opencode:opencode-dark"] .prose-chat :not(pre) > code,
+:root[data-plugin-theme="plugin:pi.theme.opencode:opencode-dark"] .prose-chat p > code,
+:root[data-plugin-theme="plugin:pi.theme.opencode:opencode-dark"] .prose-chat li > code,
+:root[data-plugin-theme="plugin:pi.theme.opencode:opencode-dark"] .prose-chat td > code {
+  color: #7fd88f !important;
+  background: rgba(127, 216, 143, 0.12) !important;
+  border: 1px solid rgba(127, 216, 143, 0.28) !important;
+  border-radius: 4px !important;
+  padding: 0.15em 0.45em !important;
+  font-family: var(--font-mono) !important;
+  font-size: 0.88em !important;
+  font-weight: 500 !important;
+  letter-spacing: 0 !important;
+}
+
+/* OpenCode 官方重点加粗 (markdown-strong: #f5a742) */
+:root[data-plugin-theme="plugin:pi.theme.opencode:opencode-dark"] .prose-chat strong {
+  color: #f5a742 !important;
+  font-weight: 600;
+}
+
+/* OpenCode 官方斜体强调 (markdown-emph: #e5c07b) */
+:root[data-plugin-theme="plugin:pi.theme.opencode:opencode-dark"] .prose-chat em {
+  color: #e5c07b !important;
+  font-style: italic;
+}
+
+/* OpenCode 官方列表项与有序列表序号 (list-item: #fab283, enumeration: #56b6c2) */
+:root[data-plugin-theme="plugin:pi.theme.opencode:opencode-dark"] .prose-chat ul > li::marker {
+  color: #fab283 !important;
+  font-weight: 700;
+}
+
+:root[data-plugin-theme="plugin:pi.theme.opencode:opencode-dark"] .prose-chat ol > li::marker {
+  color: #56b6c2 !important;
+  font-weight: 700;
+}
+
+/* OpenCode 官方引用块 (markdown-block-quote: #e5c07b) */
+:root[data-plugin-theme="plugin:pi.theme.opencode:opencode-dark"] .prose-chat blockquote {
+  border-left: 3.5px solid #e5c07b !important;
+  background: rgba(229, 192, 123, 0.08) !important;
+  color: #e0e0e0 !important;
+  border-radius: 0 6px 6px 0 !important;
+  padding: 0.6em 1em !important;
+  margin: 0.9em 0 !important;
+}
+
+/* OpenCode 官方分割线 (markdown-horizontal-rule: #808080) */
+:root[data-plugin-theme="plugin:pi.theme.opencode:opencode-dark"] .prose-chat hr {
+  border-color: rgba(128, 128, 128, 0.35) !important;
+  margin: 1.5em 0 !important;
+}
+
+/* OpenCode 官方链接 (markdown-link: #fab283, markdown-link-text: #56b6c2) */
+:root[data-plugin-theme="plugin:pi.theme.opencode:opencode-dark"] .prose-chat a {
+  color: #56b6c2 !important;
+  text-decoration-color: rgba(86, 182, 194, 0.45) !important;
+}
+
+:root[data-plugin-theme="plugin:pi.theme.opencode:opencode-dark"] .prose-chat a:hover {
+  color: #fab283 !important;
+  text-decoration-color: #fab283 !important;
+}
+
+/* 表格增强（融入 OpenCode 主色调） */
+:root[data-plugin-theme="plugin:pi.theme.opencode:opencode-dark"] .prose-chat th {
+  background: rgba(157, 124, 216, 0.16) !important;
+  color: #f8fafc !important;
+  border: 1px solid rgba(148, 163, 184, 0.22) !important;
+  font-weight: 600;
+}
+
+:root[data-plugin-theme="plugin:pi.theme.opencode:opencode-dark"] .prose-chat td {
+  border: 1px solid rgba(148, 163, 184, 0.15) !important;
+}
+
+:root[data-plugin-theme="plugin:pi.theme.opencode:opencode-dark"] .prose-chat tbody tr:nth-child(2n) td {
+  background: rgba(255, 255, 255, 0.02) !important;
+}
+
+:root[data-plugin-theme="plugin:pi.theme.opencode:opencode-dark"] .prose-chat tbody tr:hover td {
+  background: rgba(157, 124, 216, 0.08) !important;
+}
+
+/* 代码块容器优化（OpenCode 深邃中性底色 neutral: #0a0a0a） */
+:root[data-plugin-theme="plugin:pi.theme.opencode:opencode-dark"] .code-block {
+  --code-block-bg: #111116 !important;
+  border: 1px solid rgba(157, 124, 216, 0.24) !important;
+  border-radius: 8px !important;
+}
+
+:root[data-plugin-theme="plugin:pi.theme.opencode:opencode-dark"] .code-block-head {
+  background: #191922 !important;
+  border-bottom: 1px solid rgba(157, 124, 216, 0.18) !important;
+}

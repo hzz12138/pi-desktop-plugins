@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "id": "pi.theme.opencode",
+  "name": "OpenCode Theme",
+  "version": "1.1.0",
+  "description": "Pixel-perfect port of the official OpenCode palette (anomalyco/opencode): #9d7cd8 violet headings, #7fd88f mint code, #f5a742 amber highlights, and monospace typography.",
+  "i18n": {
+    "zh-CN": {
+      "name": "OpenCode 极客高清主题",
+      "description": "1:1 严格对齐 OpenCode 官方源码（anomalyco/opencode）配色定义：#9d7cd8 优雅紫罗兰标题、#7fd88f 清新薄荷绿行内代码、#f5a742 暖金重点，带来极致清晰排版。",
+      "safetyNotes": "纯样式插件。仅贡献全局主题（只有 CSS 样式定义）。无网络请求、文件读写、剪贴板或智能体工具访问。"
+    },
+    "en": {
+      "name": "OpenCode Theme",
+      "description": "Pixel-perfect port of the official OpenCode palette (anomalyco/opencode): #9d7cd8 violet headings, #7fd88f mint code, #f5a742 amber highlights, and monospace typography.",
+      "safetyNotes": "Pure styling. The plugin contributes global themes (CSS only). No network, file, clipboard, or agent access."
+    }
+  },
+  "author": "hzz12138",
+  "categories": [
+    "theme",
+    "appearance"
+  ],
+  "main": "main.js",
+  "safetyNotes": "Pure styling. The plugin contributes global themes (CSS only). No network, file, clipboard, or agent access.",
+  "contributes": {
+    "themes": [
+      {
+        "id": "opencode-dark",
+        "label": "OpenCode Dark (官方原版)",
+        "path": "themes/opencode-dark.css",
+        "base": "dark"
+      },
+      {
+        "id": "opencode-light",
+        "label": "OpenCode Light (官方原版)",
+        "path": "themes/opencode-light.css",
+        "base": "light"
+      }
+    ]
+  },
+  "permissions": [
+    "ui.theme"
+  ],
+  "engines": {
+    "piDesktop": ">=0.1.0"
+  }
+}
