@@ -1,126 +1,153 @@
 /* ==========================================================================
-   OpenCode Official Dark Theme for PI-Desktop
-   Source: github.com/anomalyco/opencode (packages/ui/src/theme/themes/opencode.json)
-   Palette:
-     neutral:      #0a0a0a
-     text:         #eeeeee
-     heading:      #9d7cd8 (OpenCode Violet)
-     code:         #7fd88f (OpenCode Mint Green)
-     strong:       #f5a742 (OpenCode Amber Gold)
-     emph:         #e5c07b (OpenCode Wheat Yellow)
-     link:         #fab283 (OpenCode Peach Orange)
-     link-text:    #56b6c2 (OpenCode Cyan Blue)
-     list-item:    #fab283 (OpenCode Peach)
-     enumeration:  #56b6c2 (OpenCode Cyan)
-     rule:         #808080 (OpenCode Weak Gray)
+   OpenCode Official Pixel-Perfect Theme for PI-Desktop
+   Source: github.com/anomalyco/opencode (packages/tui & packages/session-ui)
+   Design System:
+     background:    #0a0a0a (OpenCode Absolute Deep Dark)
+     panels:        #141414
+     elements:      #1e1e1e
+     border:        #3c3c3c / #484848
+     text-primary:  #eeeeee
+     text-muted:    #808080
+     accent:        #9d7cd8 (OpenCode Signature Violet)
+     code:          #7fd88f (OpenCode Signature Mint Green)
+     strong:        #f5a742 (OpenCode Amber Gold)
+     emph:          #e5c07b (OpenCode Wheat Yellow)
+     link:          #fab283 (OpenCode Peach Orange)
+     cyan:          #56b6c2 (OpenCode Cyan Blue)
    ========================================================================== */
 
+/* 全局 Design Tokens 映射（覆盖 PI-Desktop 框架层） */
 :root[data-plugin-theme="plugin:pi.theme.opencode:opencode-dark"] {
-  --font-mono: "JetBrains Mono", "Cascadia Code", "Fira Code", "Consolas", Menlo, Monaco, monospace !important;
+  /* 字体栈：彻底对齐 OpenCode TUI 终端级等宽排版 */
+  --font-mono: "JetBrains Mono", "Cascadia Code", "Fira Code", Consolas, Menlo, Monaco, monospace !important;
+  --font-sans: "JetBrains Mono", "Cascadia Code", "Fira Code", Consolas, "PingFang SC", "Microsoft YaHei", monospace !important;
+
+  /* 背景与表面（彻底去除灰白浮层，还原 #0a0a0a 纯粹极客黑） */
+  --ds-bg-primary: #0a0a0a !important;
+  --ds-bg-secondary: #141414 !important;
+  --ds-bg-tertiary: #1e1e1e !important;
+  --ds-bg-inset: #050505 !important;
+  --ds-bg-composer: #141414 !important;
+  --ds-bg-sidebar: #0e0e0e !important;
+  --ds-bg-hover: rgba(255, 255, 255, 0.05) !important;
+  --ds-bg-active: rgba(255, 255, 255, 0.08) !important;
+
+  /* 边框体系 */
+  --ds-border: #282828 !important;
+  --ds-border-subtle: #1e1e1e !important;
+  --ds-border-focused: #9d7cd8 !important;
+
+  /* 文字体系 */
+  --ds-text-primary: #eeeeee !important;
+  --ds-text-secondary: #b0b0b0 !important;
+  --ds-text-muted: #808080 !important;
+  --ds-text-faint: #555555 !important;
+
+  /* 强调色（OpenCode 标志性紫罗兰） */
   --ds-accent: #9d7cd8 !important;
   --ds-accent-soft: #b89ce8 !important;
 }
 
-/* 全局 Markdown 对话排版与正文色彩 */
+/* ==========================================================================
+   Markdown 正文与对话区域（Pixel-Perfect 对齐 OpenCode markdown.css）
+   ========================================================================== */
+
+.prose-chat,
 :root[data-plugin-theme="plugin:pi.theme.opencode:opencode-dark"] .prose-chat {
   color: #eeeeee !important;
-  letter-spacing: 0.01em;
+  font-family: var(--font-sans) !important;
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+  letter-spacing: 0.015em !important;
 }
 
-/* OpenCode 官方标题色彩体系 (markdown-heading: #9d7cd8) */
-:root[data-plugin-theme="plugin:pi.theme.opencode:opencode-dark"] .prose-chat h1 {
-  color: #9d7cd8 !important;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  margin-top: 1.5em;
-  margin-bottom: 0.6em;
-  padding-bottom: 0.3em;
-  border-bottom: 1px solid rgba(157, 124, 216, 0.28);
-}
-
-:root[data-plugin-theme="plugin:pi.theme.opencode:opencode-dark"] .prose-chat h2 {
-  color: #9d7cd8 !important;
-  font-weight: 700;
-  letter-spacing: -0.015em;
-  margin-top: 1.4em;
-  margin-bottom: 0.5em;
-  padding-bottom: 0.25em;
-  border-bottom: 1px solid rgba(157, 124, 216, 0.2);
-}
-
-:root[data-plugin-theme="plugin:pi.theme.opencode:opencode-dark"] .prose-chat h3 {
-  color: #b89ce8 !important;
-  font-weight: 600;
-  margin-top: 1.2em;
-  margin-bottom: 0.4em;
-}
-
+/* 标题体系：纯净紫罗兰，无下划线，紧凑自然（完全还原终端大纲） */
+:root[data-plugin-theme="plugin:pi.theme.opencode:opencode-dark"] .prose-chat h1,
+:root[data-plugin-theme="plugin:pi.theme.opencode:opencode-dark"] .prose-chat h2,
+:root[data-plugin-theme="plugin:pi.theme.opencode:opencode-dark"] .prose-chat h3,
 :root[data-plugin-theme="plugin:pi.theme.opencode:opencode-dark"] .prose-chat h4,
 :root[data-plugin-theme="plugin:pi.theme.opencode:opencode-dark"] .prose-chat h5,
 :root[data-plugin-theme="plugin:pi.theme.opencode:opencode-dark"] .prose-chat h6 {
-  color: #b89ce8 !important;
-  font-weight: 600;
+  color: #9d7cd8 !important;
+  font-family: var(--font-sans) !important;
+  font-weight: 700 !important;
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
 }
 
-/* OpenCode 官方行内代码高亮 (markdown-code: #7fd88f) */
+:root[data-plugin-theme="plugin:pi.theme.opencode:opencode-dark"] .prose-chat h1 {
+  font-size: 17px !important;
+  margin-top: 1.4em !important;
+  margin-bottom: 0.6em !important;
+}
+
+:root[data-plugin-theme="plugin:pi.theme.opencode:opencode-dark"] .prose-chat h2 {
+  font-size: 15px !important;
+  margin-top: 1.3em !important;
+  margin-bottom: 0.5em !important;
+}
+
+:root[data-plugin-theme="plugin:pi.theme.opencode:opencode-dark"] .prose-chat h3 {
+  font-size: 14px !important;
+  margin-top: 1.1em !important;
+  margin-bottom: 0.4em !important;
+}
+
+/* 行内代码：纯净薄荷绿（彻底去除难看药丸底色与边框，还原官方干净语法高亮） */
 :root[data-plugin-theme="plugin:pi.theme.opencode:opencode-dark"] .prose-chat :not(pre) > code,
 :root[data-plugin-theme="plugin:pi.theme.opencode:opencode-dark"] .prose-chat p > code,
 :root[data-plugin-theme="plugin:pi.theme.opencode:opencode-dark"] .prose-chat li > code,
 :root[data-plugin-theme="plugin:pi.theme.opencode:opencode-dark"] .prose-chat td > code {
   color: #7fd88f !important;
-  background: rgba(127, 216, 143, 0.12) !important;
-  border: 1px solid rgba(127, 216, 143, 0.28) !important;
-  border-radius: 4px !important;
-  padding: 0.15em 0.45em !important;
+  background: none !important;
+  border: none !important;
+  padding: 0 0.15em !important;
   font-family: var(--font-mono) !important;
-  font-size: 0.88em !important;
-  font-weight: 500 !important;
-  letter-spacing: 0 !important;
+  font-size: 1em !important;
+  font-weight: 600 !important;
 }
 
-/* OpenCode 官方重点加粗 (markdown-strong: #f5a742) */
-:root[data-plugin-theme="plugin:pi.theme.opencode:opencode-dark"] .prose-chat strong {
+/* 加粗重点：暖金琥珀色 */
+:root[data-plugin-theme="plugin:pi.theme.opencode:opencode-dark"] .prose-chat strong,
+:root[data-plugin-theme="plugin:pi.theme.opencode:opencode-dark"] .prose-chat b {
   color: #f5a742 !important;
-  font-weight: 600;
+  font-weight: 700 !important;
 }
 
-/* OpenCode 官方斜体强调 (markdown-emph: #e5c07b) */
-:root[data-plugin-theme="plugin:pi.theme.opencode:opencode-dark"] .prose-chat em {
+/* 斜体强调：小麦暖黄 */
+:root[data-plugin-theme="plugin:pi.theme.opencode:opencode-dark"] .prose-chat em,
+:root[data-plugin-theme="plugin:pi.theme.opencode:opencode-dark"] .prose-chat i {
   color: #e5c07b !important;
-  font-style: italic;
+  font-style: italic !important;
 }
 
-/* OpenCode 官方列表项与有序列表序号 (list-item: #fab283, enumeration: #56b6c2) */
+/* 列表标记：无序破折号蜜桃橙，有序列表序号青蓝 */
 :root[data-plugin-theme="plugin:pi.theme.opencode:opencode-dark"] .prose-chat ul > li::marker {
   color: #fab283 !important;
-  font-weight: 700;
+  font-weight: 700 !important;
 }
 
 :root[data-plugin-theme="plugin:pi.theme.opencode:opencode-dark"] .prose-chat ol > li::marker {
   color: #56b6c2 !important;
-  font-weight: 700;
+  font-weight: 700 !important;
 }
 
-/* OpenCode 官方引用块 (markdown-block-quote: #e5c07b) */
+/* 引用块：小麦色边框，背景深邃轻透 */
 :root[data-plugin-theme="plugin:pi.theme.opencode:opencode-dark"] .prose-chat blockquote {
-  border-left: 3.5px solid #e5c07b !important;
-  background: rgba(229, 192, 123, 0.08) !important;
-  color: #e0e0e0 !important;
-  border-radius: 0 6px 6px 0 !important;
-  padding: 0.6em 1em !important;
-  margin: 0.9em 0 !important;
+  border-left: 3px solid #e5c07b !important;
+  background: rgba(229, 192, 123, 0.05) !important;
+  color: #d4d4d8 !important;
+  border-radius: 0 4px 4px 0 !important;
+  padding: 0.5em 0.9em !important;
+  margin: 0.8em 0 !important;
 }
 
-/* OpenCode 官方分割线 (markdown-horizontal-rule: #808080) */
-:root[data-plugin-theme="plugin:pi.theme.opencode:opencode-dark"] .prose-chat hr {
-  border-color: rgba(128, 128, 128, 0.35) !important;
-  margin: 1.5em 0 !important;
-}
-
-/* OpenCode 官方链接 (markdown-link: #fab283, markdown-link-text: #56b6c2) */
+/* 链接：青蓝交互，hover 蜜桃橙 */
 :root[data-plugin-theme="plugin:pi.theme.opencode:opencode-dark"] .prose-chat a {
   color: #56b6c2 !important;
-  text-decoration-color: rgba(86, 182, 194, 0.45) !important;
+  text-decoration: underline !important;
+  text-decoration-color: rgba(86, 182, 194, 0.35) !important;
+  text-underline-offset: 2px !important;
 }
 
 :root[data-plugin-theme="plugin:pi.theme.opencode:opencode-dark"] .prose-chat a:hover {
@@ -128,34 +155,47 @@
   text-decoration-color: #fab283 !important;
 }
 
-/* 表格增强（融入 OpenCode 主色调） */
+/* 分割线：深灰克制 */
+:root[data-plugin-theme="plugin:pi.theme.opencode:opencode-dark"] .prose-chat hr {
+  border: none !important;
+  border-top: 1px solid #282828 !important;
+  margin: 1.5em 0 !important;
+}
+
+/* 表格：清晰线框与优雅深色交互 */
 :root[data-plugin-theme="plugin:pi.theme.opencode:opencode-dark"] .prose-chat th {
-  background: rgba(157, 124, 216, 0.16) !important;
-  color: #f8fafc !important;
-  border: 1px solid rgba(148, 163, 184, 0.22) !important;
-  font-weight: 600;
+  background: #18181c !important;
+  color: #f4f4f5 !important;
+  border: 1px solid #2e2e34 !important;
+  font-weight: 600 !important;
 }
 
 :root[data-plugin-theme="plugin:pi.theme.opencode:opencode-dark"] .prose-chat td {
-  border: 1px solid rgba(148, 163, 184, 0.15) !important;
+  border: 1px solid #24242a !important;
 }
 
 :root[data-plugin-theme="plugin:pi.theme.opencode:opencode-dark"] .prose-chat tbody tr:nth-child(2n) td {
-  background: rgba(255, 255, 255, 0.02) !important;
+  background: #111114 !important;
 }
 
 :root[data-plugin-theme="plugin:pi.theme.opencode:opencode-dark"] .prose-chat tbody tr:hover td {
-  background: rgba(157, 124, 216, 0.08) !important;
+  background: #1a1a20 !important;
 }
 
-/* 代码块容器优化（OpenCode 深邃中性底色 neutral: #0a0a0a） */
+/* 代码块容器：纯黑深邃背景 #0f0f12 */
 :root[data-plugin-theme="plugin:pi.theme.opencode:opencode-dark"] .code-block {
-  --code-block-bg: #111116 !important;
-  border: 1px solid rgba(157, 124, 216, 0.24) !important;
-  border-radius: 8px !important;
+  --code-block-bg: #0f0f12 !important;
+  border: 1px solid #28282e !important;
+  border-radius: 6px !important;
 }
 
 :root[data-plugin-theme="plugin:pi.theme.opencode:opencode-dark"] .code-block-head {
-  background: #191922 !important;
-  border-bottom: 1px solid rgba(157, 124, 216, 0.18) !important;
+  background: #141418 !important;
+  border-bottom: 1px solid #242428 !important;
+}
+
+/* 输入框底部栏及按钮精修（对齐用户截图细节） */
+:root[data-plugin-theme="plugin:pi.theme.opencode:opencode-dark"] textarea {
+  color: #eeeeee !important;
+  font-family: var(--font-sans) !important;
 }
